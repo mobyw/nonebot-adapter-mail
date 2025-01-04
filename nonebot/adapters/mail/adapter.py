@@ -66,11 +66,12 @@ class Adapter(BaseAdapter):
             )
         else:
             bot.imap_client = aioimaplib.IMAP4(host=imap_info.host, port=imap_info.port)
+        # login bot imap client
+        if not await bot.login():
+            return
         while True:
             try:
-                # connect to the server
-                if not await bot.login():
-                    return
+                # connect the bot instance
                 self.bot_connect(bot)
                 log(
                     "INFO",
@@ -101,13 +102,13 @@ class Adapter(BaseAdapter):
                     (
                         f"<y>Bot {escape_tag(bot.self_id)}</y> "
                         "<r><bg #f8bbd0>"
-                        "error while setting up, reconnecting..."
+                        f"error while setting up ({e}), reconnecting..."
                         "</bg #f8bbd0></r>"
                     ),
                     e,
                 )
             finally:
-                # logout from the server
+                # logout bot imap client
                 await bot.logout()
                 # disconnect the bot instance
                 if bot.self_id in self.bots:
