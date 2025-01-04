@@ -575,7 +575,8 @@ class Bot(BaseBot):
             return mail
         # try to get mail from Sent
         response = await self.imap_client.list(
-            '""', "*"  # pyright: ignore[reportArgumentType]
+            '""',
+            "*",  # pyright: ignore[reportArgumentType]
         )
         if response.result != "OK":
             log(

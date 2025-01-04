@@ -75,18 +75,16 @@ disableBytesTypePromotions = true
 [tool.pdm]
 distribution = true
 
-[tool.pdm.dev-dependencies]
-dev = [
-    "ruff>=0.7.0",
-    "isort>=5.13.2",
-    "black>=24.0.0",
-    "nonemoji>=0.1.4",
-    "pre-commit>=4.0.1",
-]
-
 [tool.pdm.build]
 includes = ["nonebot"]
 
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
+
+[dependency-groups]
+dev = [
+    "nonemoji>=0.1.4",
+    "pre-commit>=4.0.1",
+    "ruff>=0.8.1",
+]

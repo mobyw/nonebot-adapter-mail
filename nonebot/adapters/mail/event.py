@@ -10,7 +10,6 @@ from .model import Mail
 
 
 class Event(BaseEvent):
-
     @override
     def get_event_name(self) -> str:
         return self.get_type()
