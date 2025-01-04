@@ -97,7 +97,7 @@ class _TextData(TypedDict):
 @dataclass
 class Text(MessageSegment):
     if TYPE_CHECKING:
-        data: _TextData  # pyright: ignore[reportGeneralTypeIssues]
+        data: _TextData  # pyright: ignore
 
     @override
     def __str__(self) -> str:
@@ -115,7 +115,7 @@ class _HtmlData(TypedDict):
 @dataclass
 class Html(MessageSegment):
     if TYPE_CHECKING:
-        data: _HtmlData  # pyright: ignore[reportGeneralTypeIssues]
+        data: _HtmlData  # pyright: ignore
 
     @override
     def __str__(self) -> str:
@@ -131,7 +131,7 @@ class _AttachmentData(TypedDict):
 @dataclass
 class Attachment(MessageSegment):
     if TYPE_CHECKING:
-        data: _AttachmentData  # pyright: ignore[reportGeneralTypeIssues]
+        data: _AttachmentData  # pyright: ignore
 
     @override
     def __str__(self) -> str:
