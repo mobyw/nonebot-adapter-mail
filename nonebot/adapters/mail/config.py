@@ -1,4 +1,4 @@
-from pydantic import Field, EmailStr, BaseModel, SecretStr
+from pydantic import BaseModel, EmailStr, Field, SecretStr
 
 
 class HostInfo(BaseModel):

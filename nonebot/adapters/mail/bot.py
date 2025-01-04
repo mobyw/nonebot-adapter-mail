@@ -1,23 +1,23 @@
 import asyncio
 import email.message
 import email.mime.multipart
+from typing import TYPE_CHECKING, Any, NoReturn, Optional, Union
 from typing_extensions import override
-from typing import TYPE_CHECKING, Any, Union, NoReturn, Optional
 
 import aioimaplib
 import aiosmtplib
-from nonebot.utils import escape_tag
-from nonebot.message import handle_event
 
 from nonebot.adapters import Bot as BaseBot
+from nonebot.message import handle_event
+from nonebot.utils import escape_tag
 
-from .log import log
-from .model import Mail
 from .config import BotInfo
-from .message import Message, MessageSegment
 from .event import Event, MessageEvent, NewMailMessageEvent
-from .utils import parse_byte_mail, escape_bytelines, extract_mail_parts
 from .exception import ActionFailed, NetworkError, UninitializedException
+from .log import log
+from .message import Message, MessageSegment
+from .model import Mail
+from .utils import escape_bytelines, extract_mail_parts, parse_byte_mail
 
 if TYPE_CHECKING:
     from .adapter import Adapter

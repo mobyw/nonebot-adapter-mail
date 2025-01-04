@@ -1,13 +1,12 @@
 from typing import Optional
 from typing_extensions import override
 
-from nonebot.utils import escape_tag
-from nonebot.compat import model_dump
-
 from nonebot.adapters import Event as BaseEvent
+from nonebot.compat import model_dump
+from nonebot.utils import escape_tag
 
-from .model import Mail
 from .message import Message
+from .model import Mail
 
 
 class Event(BaseEvent):

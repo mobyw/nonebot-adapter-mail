@@ -1,12 +1,13 @@
-from typing import Union, Literal, Optional, TypedDict
+from typing import Literal, Optional, TypedDict, Union
 
-from aiosmtplib.response import SMTPResponse
-from nonebot.exception import AdapterException
 from aioimaplib import Response as ImapResponse
+from aiosmtplib.response import SMTPResponse
+
 from nonebot.exception import ActionFailed as BaseActionFailed
+from nonebot.exception import AdapterException
+from nonebot.exception import ApiNotAvailable as BaseApiNotAvailable
 from nonebot.exception import NetworkError as BaseNetworkError
 from nonebot.exception import NoLogException as BaseNoLogException
-from nonebot.exception import ApiNotAvailable as BaseApiNotAvailable
 
 
 class MailAdapterException(AdapterException):

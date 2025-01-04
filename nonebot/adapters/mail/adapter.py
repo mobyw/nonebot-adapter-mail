@@ -3,17 +3,17 @@ from typing import Any
 from typing_extensions import override
 
 from aioimaplib import aioimaplib
-from nonebot.drivers import Driver
-from nonebot.utils import escape_tag
-from nonebot.compat import model_dump
 
 from nonebot.adapters import Adapter as BaseAdapter
+from nonebot.compat import model_dump
+from nonebot.drivers import Driver
+from nonebot.utils import escape_tag
 
 from .bot import Bot
-from .log import log
-from .config import Config, BotInfo
+from .config import BotInfo, Config
 from .event import NewMailMessageEvent
 from .exception import ApiNotAvailable
+from .log import log
 
 CHECK_MAIL_INTERVAL = 3.0
 RECONNECT_INTERVAL = 3.0

@@ -1,15 +1,16 @@
-import html
 import base64
-import email.message
 import email.encoders
+import email.message
 import email.mime.base
 import email.mime.text
+import html
 
 import mailparser
+
 from nonebot.utils import escape_tag
 
+from .message import Attachment, Message, MessageSegment
 from .model import Mail, User
-from .message import Message, Attachment, MessageSegment
 
 
 def escape_bytelines(s: list[bytearray]) -> str:
