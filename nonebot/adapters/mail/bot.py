@@ -48,10 +48,7 @@ async def _check_reply(
     except Exception as e:
         log(
             "WARNING",
-            (
-                f"<y>Bot {escape_tag(bot.self_id)}</y> "
-                "failed to fetch the reply mail."
-            ),
+            (f"<y>Bot {escape_tag(bot.self_id)}</y> failed to fetch the reply mail."),
             e,
         )
 

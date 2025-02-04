@@ -19,7 +19,7 @@ def escape_bytelines(s: list[bytearray]) -> str:
 
     - `s`: The list of bytearrays to escape.
     """
-    return f'[{escape_tag(", ".join([i.decode() for i in s]))}]'
+    return f"[{escape_tag(', '.join([i.decode() for i in s]))}]"
 
 
 def extract_mail_parts(message: Message) -> list[email.message.EmailMessage]:
